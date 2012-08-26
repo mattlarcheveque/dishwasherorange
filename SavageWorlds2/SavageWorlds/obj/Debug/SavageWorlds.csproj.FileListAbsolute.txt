@@ -1,5 +1,0 @@
-c:\users\matt\documents\visual studio 2010\Projects\SavageWorlds\SavageWorlds\bin\SavageWorlds.dll
-c:\users\matt\documents\visual studio 2010\Projects\SavageWorlds\SavageWorlds\bin\SavageWorlds.pdb
-c:\users\matt\documents\visual studio 2010\Projects\SavageWorlds\SavageWorlds\obj\Debug\ResolveAssemblyReference.cache
-c:\users\matt\documents\visual studio 2010\Projects\SavageWorlds\SavageWorlds\obj\Debug\SavageWorlds.dll
-c:\users\matt\documents\visual studio 2010\Projects\SavageWorlds\SavageWorlds\obj\Debug\SavageWorlds.pdb
