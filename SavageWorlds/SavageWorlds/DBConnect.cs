@@ -30,7 +30,7 @@ using System.Web.UI.WebControls;
                server = "localhost";
                database = "savageworlds";
                uid = "root";
-               password = "root";
+               password = "";
                string connectionString;
                connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
    
@@ -79,6 +79,49 @@ using System.Web.UI.WebControls;
                    return false;
                }
            }
+
+           public List<string>[] Select(String run)
+           {
+               string query = run;
+
+               //Create a list to store the result
+               List<string>[] list = new List<string>[0];
+
+               //Open connection
+               if (this.OpenConnection() == true)
+               {
+                   //Create Command
+                   MySqlCommand cmd = new MySqlCommand(query, connection);
+                   //Create a data reader and Execute the command
+                   MySqlDataReader dataReader = cmd.ExecuteReader();
+
+
+                   list = new List<string>[dataReader.VisibleFieldCount];
+                   for(int i = 0; i < dataReader.VisibleFieldCount; i++)
+                       list[i] = new List<string>();
+
+                   //Read the data and store them in the list
+                   while (dataReader.Read())
+                   {
+                       for (int i = 0; i < dataReader.VisibleFieldCount; i++)
+                           list[i].Add(dataReader[i] + "");
+                   }
+
+                   //close Data Reader
+                   dataReader.Close();
+
+                   //close Connection
+                   this.CloseConnection();
+
+                   //return list to be displayed
+                   return list;
+               }
+               else
+               {
+                   return list;
+               }
+           }
+
    /*
            //Insert statement
            public void Insert()

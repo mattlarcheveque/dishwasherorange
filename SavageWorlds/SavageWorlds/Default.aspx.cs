@@ -15,10 +15,13 @@ namespace SavageWorlds
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            test1.Text = "rawr";
+            
 
             DBConnect db = new DBConnect();
-            
+
+            List<String>[] results = db.Select("select * from view_all_characters");
+
+            test1.Text = results[1][1];
         }
         
     }
