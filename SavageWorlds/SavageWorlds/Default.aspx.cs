@@ -5,6 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
+//Add MySql Library
+using MySql.Data.MySqlClient;
+
 namespace SavageWorlds
 {
     public partial class _Default : System.Web.UI.Page
@@ -13,6 +17,9 @@ namespace SavageWorlds
         {
             test1.Text = "rawr";
 
+            DBConnect db = new DBConnect();
+            
         }
+        
     }
 }
